@@ -1,0 +1,3 @@
+[submodule "ansible-proxmox-kvm-mgmt"]
+	path = ansible-proxmox-kvm-mgmt
+	url = https://github.com/pvelati/ansible-role-proxmox-kvm-mgmt

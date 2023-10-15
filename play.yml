@@ -1,0 +1,17 @@
+---
+- hosts: localhost  
+  tasks:
+  - name: Include default extension files in secrets/
+    ansible.builtin.include_vars:
+      dir: secrets
+      depth: 1
+  roles:
+    - ansible-proxmox-kvm-mgmt
+  vars:
+    - global_api_host: https://dn42.macpro.pve.ibeep.com
+    - global_node: "macpro"
+    - vm_list:
+        - name: example-vm1
+          net: {"net0":"virtio=32:5F:B4:35:16:0F,bridge=vmbr0"}
+          scsi: {"scsi0":"local-lvm:8,ssd=1"}
+          bootdisk: 'scsi0'
